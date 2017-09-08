@@ -26,8 +26,12 @@ Concatenate the files in the following order.
 @import "page.scss";
 
 // Theme Styling
+@import "c18_header.scss";
+@import "c18_nav.scss";
 @import "c18_article.scss";
 @import "c18_index.scss";
+@import "c18_widgets.scss";
+@import "c18_footer.scss";
 @import "c18_page.scss";
 @import "c18_404.scss";
 
