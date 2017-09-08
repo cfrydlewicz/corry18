@@ -1,42 +1,36 @@
 /* Font Settings */
 
-$f-base-size:	16px;
+$f_base-size:	16px;
 
-/* defaults */
+// Defaults
 body {
 	font-family: 'Arimo', sans-serif;
-	font-size: $f-base-size;
+	font-size: $f_base-size;
 	line-height: 1.5;
-	color: $c-basetext;
+	color: $c_basetext;
+	@media #{$mq-lg} {
+		font-size: $f_base-size * 1.125;
+	}
+	@media #{$mq-xl} {
+		font-size: $f_base-size * 1.25;
+	}
 }
 
-/* Font sizes based on breakpoints */
-.copy-area {
-	font-size: $f-base-size;
 
-	@media #{$not-md} {
-		font-size: $f-base-size * 1.25;
-	}
-	@media #{$not-lg} {
-		font-size: $f-base-size * 1.5;
-	}
-
-}
-
-/* emphasis */
+// Emphasis
 strong {
   font-weight: bold;
 }
 em {
   font-style: italic;
 }
-.copy-area {
+.i_copy-area {
 	strong,
 	em {
-		color: #000;
+		color: $c_black;
 	}
 	del {
-	  color: $c-grey;
+	  color: $c_grey;
 	}
 	strong,
 	em,
@@ -47,92 +41,89 @@ em {
 	}
 }
 
-/* links */
+
+// Links
 a,
-.u-faketextlink {
-	color: $c-link;
+.fakelink {
+	color: $c_link;
 	text-decoration: none;
-}
-a:active,
-.u-faketextlink:hover {
-	color: $c-link2;
-}
-a:visited {
-	color: mix(black, $c-link, 50%);
-	.copy-area & {
-		@extend .icon-checkmark;
-		&:after {
-			@extend .u-icomoon;
+	.i_dark-bg & {
+		color: $c_link2;
+	}
+	.i_copy-area & {
+		text-decoration: underline;
+	}
+	&:hover {
+		color: $c_link--hov;
+		.i_dark-bg & {
+			color: $c_link2--hov;
+		}
+	}
+	&:active,
+	&:visited {
+		color: $c_link--act;
+		.i_dark-bg & {
+			color: $c_link2--act;
 		}
 	}
 }
-a:hover {
-	color: $c-link2;
-	.copy-area & {
-		color: $c-link;
-		text-decoration: underline;
-	}
-}
 
-/* copy */
+
+// Copy
 h1 {
 	font-size: 2.1rem;
 	line-height: 1;
 	font-weight: normal;
-	.copy-area & {
+	.i_copy-area & {
 		font-size: 2.1em;
 		margin-bottom: 1em;
 	}
 }
-
 h2 {
   font-size: 1.7rem;
   line-height: 1;
   font-weight: normal;
-	.copy-area & {
+	.i_copy-area & {
 	  font-size: 1.7em;
 		margin-top: 2em;
 		margin-bottom: .5em;
 	}
 }
-
 h3 {
 	font-size: 1.1rem;
 	line-height: 1.4;
 	font-weight: bold;
-	.copy-area & {
+	.i_copy-area & {
 		font-size: 1.1em;
 		margin-top: 1.5em;
 		margin-bottom: .5em;
 	}
 }
-
 h4 {
   font-size: 1rem;
   line-height: 1;
   font-weight: bold;
   text-transform: uppercase;
-	.copy-area & {
+	.i_copy-area & {
 	  font-size: 1em;
 		margin-bottom: .5em;
 	}
 }
-
-p, li {
+p,
+li {
   font-size: 1rem;
-	.copy-area & {
+	.i_copy-area & {
 	  font-size: 1em;
 	}
 }
 p {
-  line-height: 1.8;
-	.copy-area & {
-
+  line-height: 1.75;
+	.i_copy-area & {
 		&:not(:last-of-type) {
 			margin-bottom: 1em;
 		}
-
-		a {
+		a,
+		.fakelink {
 			/* Break long links and hyphenate them */
 			overflow-wrap: break-word;
 			word-wrap: break-word;
@@ -143,7 +134,6 @@ p {
 			-webkit-hyphens: auto;
 			hyphens: auto;
 		}
-
 	}
 }
 li {
@@ -153,67 +143,78 @@ li {
   	margin-bottom: 0;
   }
 }
-.copy-area ul,
-.copy-area ol {
-	padding-left: 2em;
-	margin-bottom: 1em;
-	ul, ol {
-		padding-left: .5em;
-		margin: 1em 0 .5em;
-		border-width: 1px 0;
-		border-style: solid;
-		border-color: mix(white, $c-primary, 80%);
+
+
+// Lists
+.i_copy-area {
+	ul,
+	ol {
+		padding-left: 2em;
+		margin-bottom: 1em;
 		ul, ol {
-			border-color: mix(white, $c-secondary, 80%);
+			padding-left: .5em;
+			margin: 1em 0 .5em;
+			border-width: 1px 0;
+			border-style: solid;
+			border-color: mix(white, $c_primary, 80%);
 			ul, ol {
-				border-color: mix(white, $c-accent, 80%);
+				border-color: mix(white, $c_secondary, 80%);
+				ul, ol {
+					border-color: mix(white, $c_accent, 80%);
+				}
 			}
 		}
 	}
-}
-.copy-area ul {
-	list-style-type: disc;
 	ul {
-		list-style-type: square;
+		// TODO: Replace these with icons
+		list-style-type: disc;
 		ul {
-			list-style-type: circle;
+			list-style-type: square;
+			ul {
+				list-style-type: circle;
+			}
 		}
 	}
-}
-.copy-area ol {
-	list-style-type: decimal-leading-zero;
 	ol {
-		list-style-type: upper-alpha;
+		list-style-type: decimal-leading-zero;
 		ol {
-			list-style-type: lower-roman;
+			list-style-type: upper-alpha;
 			ol {
-				list-style-type: lower-alpha;
+				list-style-type: lower-roman;
+				ol {
+					list-style-type: lower-alpha;
+				}
 			}
 		}
 	}
 }
 
-.copy-area table {
+
+// Tables
+.i_copy-area table {
 	font-size: .9em;
-	line-height: 1.2em;
+	line-height: 1.2;
 	p, li {
 		font-size: .9em;
 	}
 	th {
 	  font-weight: bold;
 	  text-transform: uppercase;
+	  letter-spacing: 1px;
 	}
 }
 
-.copy-area blockquote {
+
+// Quotes
+.i_copy-area blockquote {
 	margin: 2em 0;
 	padding: .5em 1em 1.2em .5em;
 	quotes: "\201C""\201D""\2018""\2019";
-	background-color: mix(white, $c-primary, 80%);
-	border-left: .5em solid mix(white, $c-primary, 60%);
+	background-color: mix(white, $c_primary, 80%);
+	border-left: .5em solid mix(white, $c_primary, 60%);
 	&:before {
 		float: left;
-		color: mix(white, $c-primary, 60%);
+		color: mix(white, $c_primary, 60%);
 		content: open-quote;
 		font-size: 5em;
 		line-height: 0;
@@ -254,39 +255,39 @@ li {
 }
 
 /* text modifiers */
-.f-small {
+.f_small {
 	font-size: .9rem;
-	.copy-area & {
+	.i_copy-area & {
 	  font-size: .9em;
 	}
 }
-.f-smaller {
+.f_smaller {
 	font-size: .75rem;
-	.copy-area & {
+	.i_copy-area & {
 	  font-size: .75em;
 	}
 }
-.f-smallest {
+.f_smallest {
 	font-size: .625rem;
-	.copy-area & {
+	.i_copy-area & {
 	  font-size: .625em;
 	}
 }
-.f-large {
+.f_large {
 	font-size: 1.1rem;
-	.copy-area & {
+	.i_copy-area & {
 	  font-size: .1.1em;
 	}
 }
-.f-larger {
+.f_larger {
 	font-size: 1.25rem;
-	.copy-area & {
+	.i_copy-area & {
 	  font-size: 1.25em;
 	}
 }
-.f-largest {
+.f_largest {
 	font-size: 1.4rem;
-	.copy-area & {
+	.i_copy-area & {
 	  font-size: 1.4em;
 	}
 }
