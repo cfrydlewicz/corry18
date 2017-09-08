@@ -1,0 +1,36 @@
+/*
+==========================================================================
+SCSS MANIFEST
+==========================================================================
+Concatenate the files in the following order.
+*/
+
+// Universal Reset
+@import "reset.scss";
+
+// Universal Variables
+@import "breakpoints.scss";
+
+// Theme Variables
+@import "c18_fonts.scss";
+@import "c18_colors.scss";
+
+// Universal Styling
+@import "wp-plugins.scss";
+@import "article.scss";
+@import "article--mtg.scss";
+@import "article--recipe.scss";
+@import "article--story.scss";
+@import "page.scss";
+
+// Theme Styling
+@import "c18_article.scss";
+@import "c18_index.scss";
+@import "c18_page.scss";
+@import "c18_404.scss";
+
+// Theme-agnostic Styling
+@import "about.scss";
+
+// Utility Classes
+@import "utility.scss";

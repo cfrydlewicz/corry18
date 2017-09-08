@@ -1,0 +1,402 @@
+/* Font Settings */
+
+$f-base-size:	16px;
+
+/* defaults */
+body {
+	font-family: 'Arimo', sans-serif;
+	font-size: $f-base-size;
+	line-height: 1.5;
+	color: $c-basetext;
+}
+
+/* Font sizes based on breakpoints */
+.copy-area {
+	font-size: $f-base-size;
+
+	@media #{$not-md} {
+		font-size: $f-base-size * 1.25;
+	}
+	@media #{$not-lg} {
+		font-size: $f-base-size * 1.5;
+	}
+
+}
+
+/* emphasis */
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
+}
+.copy-area {
+	strong,
+	em {
+		color: #000;
+	}
+	del {
+	  color: $c-grey;
+	}
+	strong,
+	em,
+	del {
+		span & {	/* exception for when color is manually changed in the WP editor */
+			color: inherit;
+		}
+	}
+}
+
+/* links */
+a,
+.u-faketextlink {
+	color: $c-link;
+	text-decoration: none;
+}
+a:active,
+.u-faketextlink:hover {
+	color: $c-link2;
+}
+a:visited {
+	color: mix(black, $c-link, 50%);
+	.copy-area & {
+		@extend .icon-checkmark;
+		&:after {
+			@extend .u-icomoon;
+		}
+	}
+}
+a:hover {
+	color: $c-link2;
+	.copy-area & {
+		color: $c-link;
+		text-decoration: underline;
+	}
+}
+
+/* copy */
+h1 {
+	font-size: 2.1rem;
+	line-height: 1;
+	font-weight: normal;
+	.copy-area & {
+		font-size: 2.1em;
+		margin-bottom: 1em;
+	}
+}
+
+h2 {
+  font-size: 1.7rem;
+  line-height: 1;
+  font-weight: normal;
+	.copy-area & {
+	  font-size: 1.7em;
+		margin-top: 2em;
+		margin-bottom: .5em;
+	}
+}
+
+h3 {
+	font-size: 1.1rem;
+	line-height: 1.4;
+	font-weight: bold;
+	.copy-area & {
+		font-size: 1.1em;
+		margin-top: 1.5em;
+		margin-bottom: .5em;
+	}
+}
+
+h4 {
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: bold;
+  text-transform: uppercase;
+	.copy-area & {
+	  font-size: 1em;
+		margin-bottom: .5em;
+	}
+}
+
+p, li {
+  font-size: 1rem;
+	.copy-area & {
+	  font-size: 1em;
+	}
+}
+p {
+  line-height: 1.8;
+	.copy-area & {
+
+		&:not(:last-of-type) {
+			margin-bottom: 1em;
+		}
+
+		a {
+			/* Break long links and hyphenate them */
+			overflow-wrap: break-word;
+			word-wrap: break-word;
+			-ms-word-break: break-all;
+			word-break: break-word;
+			-ms-hyphens: auto;
+			-moz-hyphens: auto;
+			-webkit-hyphens: auto;
+			hyphens: auto;
+		}
+
+	}
+}
+li {
+  line-height: 1.2;
+	margin-bottom: .5em;
+  &:last-child {
+  	margin-bottom: 0;
+  }
+}
+.copy-area ul,
+.copy-area ol {
+	padding-left: 2em;
+	margin-bottom: 1em;
+	ul, ol {
+		padding-left: .5em;
+		margin: 1em 0 .5em;
+		border-width: 1px 0;
+		border-style: solid;
+		border-color: mix(white, $c-primary, 80%);
+		ul, ol {
+			border-color: mix(white, $c-secondary, 80%);
+			ul, ol {
+				border-color: mix(white, $c-accent, 80%);
+			}
+		}
+	}
+}
+.copy-area ul {
+	list-style-type: disc;
+	ul {
+		list-style-type: square;
+		ul {
+			list-style-type: circle;
+		}
+	}
+}
+.copy-area ol {
+	list-style-type: decimal-leading-zero;
+	ol {
+		list-style-type: upper-alpha;
+		ol {
+			list-style-type: lower-roman;
+			ol {
+				list-style-type: lower-alpha;
+			}
+		}
+	}
+}
+
+.copy-area table {
+	font-size: .9em;
+	line-height: 1.2em;
+	p, li {
+		font-size: .9em;
+	}
+	th {
+	  font-weight: bold;
+	  text-transform: uppercase;
+	}
+}
+
+.copy-area blockquote {
+	margin: 2em 0;
+	padding: .5em 1em 1.2em .5em;
+	quotes: "\201C""\201D""\2018""\2019";
+	background-color: mix(white, $c-primary, 80%);
+	border-left: .5em solid mix(white, $c-primary, 60%);
+	&:before {
+		float: left;
+		color: mix(white, $c-primary, 60%);
+		content: open-quote;
+		font-size: 5em;
+		line-height: 0;
+		margin-top: .4em;
+		vertical-align: top;
+	}
+	&:after {
+		content: close-quote;
+		@extend .u-visually-hidden;
+	}
+	p {
+		display: inline-block;
+		max-width: 80%;
+		margin-top: .5em;	/* align with large open quote */
+		margin-left: 1em;	/* Indent text */
+		margin-bottom: 2.5em;	/* compensate an extra 1.5 for negative margin-top */
+		&:nth-last-child(2):after {
+			/* add close-quote after next-to-last p tag */
+			content: close-quote;
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+		&.cite,
+		del { /* fallback in case the replacement script doesn't fire */
+			font-size: .9em;
+			line-height: 1;
+			text-align: right;
+			width: 100%;
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		del { /* fallback in case the replacement script doesn't fire */
+			color: inherit;
+			text-decoration: none;
+		}
+	}
+}
+
+/* text modifiers */
+.f-small {
+	font-size: .9rem;
+	.copy-area & {
+	  font-size: .9em;
+	}
+}
+.f-smaller {
+	font-size: .75rem;
+	.copy-area & {
+	  font-size: .75em;
+	}
+}
+.f-smallest {
+	font-size: .625rem;
+	.copy-area & {
+	  font-size: .625em;
+	}
+}
+.f-large {
+	font-size: 1.1rem;
+	.copy-area & {
+	  font-size: .1.1em;
+	}
+}
+.f-larger {
+	font-size: 1.25rem;
+	.copy-area & {
+	  font-size: 1.25em;
+	}
+}
+.f-largest {
+	font-size: 1.4rem;
+	.copy-area & {
+	  font-size: 1.4em;
+	}
+}
+
+/* icomoon CSS */
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?byte2f');
+	src:url('fonts/icomoon.eot?byte2f#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.ttf?byte2f') format('truetype'),
+		url('fonts/icomoon.woff?byte2f') format('woff'),
+		url('fonts/icomoon.svg?byte2f#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.u-icomoon,
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-mana-blue .path1:before {
+  content: "\e918";
+}
+.icon-mana-blue .path2:before {
+  content: "\e919";
+  margin-left: -1em;
+}
+.icon-home3:before {
+  content: "\e903";
+}
+.icon-bubbles:before {
+  content: "\e904";
+}
+.icon-heart:before {
+  content: "\e905";
+}
+.icon-plus:before {
+  content: "\e906";
+}
+.icon-minus:before {
+  content: "\e907";
+}
+.icon-cross:before {
+  content: "\e908";
+}
+.icon-checkmark:before {
+  content: "\e909";
+}
+.icon-arrow-up2:before {
+  content: "\e90a";
+}
+.icon-arrow-right2:before {
+  content: "\e90b";
+}
+.icon-arrow-down2:before {
+  content: "\e90c";
+}
+.icon-arrow-left2:before {
+  content: "\e90d";
+}
+.icon-mail2:before {
+  content: "\e90e";
+}
+.icon-google-plus:before {
+  content: "\e90f";
+}
+.icon-facebook2:before {
+  content: "\e910";
+}
+.icon-twitter:before {
+  content: "\e911";
+}
+.icon-steam:before {
+  content: "\e912";
+}
+.icon-github:before {
+  content: "\e913";
+}
+.icon-wordpress:before {
+  content: "\e914";
+}
+.icon-skype:before {
+  content: "\e915";
+}
+.icon-reddit:before {
+  content: "\e916";
+}
+.icon-search:before {
+  content: "\e917";
+}
+.icon-spotify:before {
+  content: "\e900";
+}
+.icon-twitch:before {
+  content: "\e91a";
+}
+.icon-linkedin:before {
+  content: "\e901";
+}
+.icon-stackoverflow:before {
+  content: "\e902";
+}

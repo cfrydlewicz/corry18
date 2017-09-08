@@ -1,0 +1,35 @@
+// Base Theme Colors
+$c18_primary:			#376c7c;
+$c18_secondary:		#3c377c;
+$c18_accent:			#e85f00;
+
+// Greyscale
+$c18_black:				mix(black, $c18_primary, 90%);
+$c18_grey20:			mix(black, $c18_primary, 80%);
+$c18_grey30:			mix(black, $c18_primary, 70%);
+$c18_grey40:			mix(black, $c18_primary, 60%);
+$c18_grey50:			mix(#808080, $c18_primary, 50%);
+$c18_grey60:			mix(white, $c18_primary, 60%);
+$c18_grey70:			mix(white, $c18_primary, 70%);
+$c18_grey80:			mix(white, $c18_primary, 80%);
+$c18_white:				mix(white, $c18_primary, 90%);
+
+// Functional
+$c18_basetext:		#484e4e;			// assumes light backgrounds
+$c18_link:				#00f;
+$c18_link-hov:		$c18_accent;
+$c18_link-act:		$c18_accent;
+$c18_link2:				#00f;					// link2 for dark backgrounds
+$c18_link2-hov:		$c18_accent;
+$c18_link2-act:		$c18_accent;
+
+
+// Color Utility Classes
+// TODO: Write a Mixin for Color utility classes
+.c18_color_black {	color: $c18_black;	}
+.c18_color_white {	color: $c18_white;	}
+
+.c18_bgcolor_black {	background-color: $c18_black;	}
+.c18_bgcolor_white {	background-color: $c18_white;	}
+
+
