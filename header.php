@@ -50,24 +50,38 @@
 	</header>
 
 	<section class="navigation-container">
-		<nav class="navigation-parent u_flex u_flex--space-between">
 
-			<!-- TODO: Write script for selecting current page Type -->
-			<select>
-				<option value="/" selected="selected">Home</option>
-				<option value="/category/pro/">Professional</option>
-				<option value="/category/personal/">Personal</option>
-				<option value="/about/">About Me</option>
-			</select>
+			<!-- On home page, display the two top-level categories only -->
+			<?php if ( is_front_page() ) : ?>
 
-			<!-- TODO: Write script for selecting current page Category (if it has only one) -->
-			<select>
-				<option value="" selected="selected">Categories</option>
-			</select>
+				<nav class="navigation-parent">
+					<ul>
+						<li><a href="/category/pro/">Professional</a></li>
+						<li><a href="/category/personal/">Personal</a></li>
+					</ul>
+				</nav>
 
-		</nav>
+			<?php else : ?>
+
+				<nav class="navigation-parent u_flex u_flex--space-between">
+
+					<!-- TODO: Write script for selecting current page Type -->
+					<select>
+						<option value="/" selected="selected">Home</option>
+						<option value="/category/pro/">Professional</option>
+						<option value="/category/personal/">Personal</option>
+						<option value="/about/">About Me</option>
+					</select>
+
+					<!-- TODO: Write script for selecting current page Category (if it has only one) -->
+					<select>
+						<option value="" selected="selected">Categories</option>
+					</select>
+
+				</nav>
+	
+			<?php endif; ?>
 
 	</section><!-- /.navigation-container -->
-
 
 <!--/div .total-wrapper expands beyond this file and ends in footer.php -->
