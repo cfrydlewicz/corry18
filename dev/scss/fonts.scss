@@ -75,6 +75,8 @@ a,
 p,
 li {
 	font-size: 1rem;
+  /* Maximum width of 65 characters */
+  max-width: 65ch;
 }
 p {
 	line-height: 1.75;
