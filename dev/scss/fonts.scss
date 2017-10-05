@@ -199,17 +199,17 @@ li {
 // Quotes
 blockquote {
 	quotes: "\201C""\201D""\2018""\2019";
-	&:before {
+	&::before {
 		content: open-quote;
 		@extend .u_visually-hidden;
 	}
-	&:after {
+	&::after {
 		content: close-quote;
 		@extend .u_visually-hidden;
 	}
 	p {
 		display: inline-block;
-		&:nth-last-child(2):after {
+		&:nth-last-child(2)::after {
 			/* add close-quote after next-to-last p tag */
 			content: close-quote;
 		}
@@ -296,78 +296,78 @@ blockquote {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.icon-home3:before {
+.icon-home3::before {
 	content: "\e903";
 }
-.icon-bubbles:before {
+.icon-bubbles::before {
 	content: "\e904";
 }
-.icon-heart:before {
+.icon-heart::before {
 	content: "\e905";
 }
-.icon-plus:before {
+.icon-plus::before {
 	content: "\e906";
 }
-.icon-minus:before {
+.icon-minus::before {
 	content: "\e907";
 }
-.icon-cross:before {
+.icon-cross::before {
 	content: "\e908";
 }
-.icon-checkmark:before {
+.icon-checkmark::before {
 	content: "\e909";
 }
-.icon-arrow-up2:before {
+.icon-arrow-up2::before {
 	content: "\e90a";
 }
-.icon-arrow-right2:before {
+.icon-arrow-right2::before {
 	content: "\e90b";
 }
-.icon-arrow-down2:before {
+.icon-arrow-down2::before {
 	content: "\e90c";
 }
-.icon-arrow-left2:before {
+.icon-arrow-left2::before {
 	content: "\e90d";
 }
-.icon-mail2:before {
+.icon-mail2::before {
 	content: "\e90e";
 }
-.icon-google-plus:before {
+.icon-google-plus::before {
 	content: "\e90f";
 }
-.icon-facebook2:before {
+.icon-facebook2::before {
 	content: "\e910";
 }
-.icon-twitter:before {
+.icon-twitter::before {
 	content: "\e911";
 }
-.icon-steam:before {
+.icon-steam::before {
 	content: "\e912";
 }
-.icon-github:before {
+.icon-github::before {
 	content: "\e913";
 }
-.icon-wordpress:before {
+.icon-wordpress::before {
 	content: "\e914";
 }
-.icon-skype:before {
+.icon-skype::before {
 	content: "\e915";
 }
-.icon-reddit:before {
+.icon-reddit::before {
 	content: "\e916";
 }
-.icon-search:before {
+.icon-search::before {
 	content: "\e917";
 }
-.icon-spotify:before {
+.icon-spotify::before {
 	content: "\e900";
 }
-.icon-twitch:before {
+.icon-twitch::before {
 	content: "\e91a";
 }
-.icon-linkedin:before {
+.icon-linkedin::before {
 	content: "\e901";
 }
-.icon-stackoverflow:before {
+.icon-stackoverflow::before {
 	content: "\e902";
 }

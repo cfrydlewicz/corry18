@@ -171,7 +171,7 @@
 .u_clear {
 	clear: both;
 }
-.u_clearfix:after {
+.u_clearfix::after {
 	clear: both;
 	content: '';
 	visibility: hidden;

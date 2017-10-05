@@ -79,7 +79,7 @@
 			@extend h3;
 			color: #fff;
 			margin-bottom: .5rem;
-			&:before {
+			&::before {
 				display: none;	/* remove small line above share widget */
 			}
 		}

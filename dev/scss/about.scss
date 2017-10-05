@@ -103,87 +103,87 @@
 		background: repeating-linear-gradient( 45deg, mix(black, $c-basetext, 29%), mix(black, $c-basetext, 20%) 10px, mix(black, $c-basetext, 29%) 10px, mix(black, $c-basetext, 20%) 20px );
 		margin-bottom: .5rem;
 		&.level100 {
-/*    &:after {content: "100%";}  */
+/*    &::after {content: "100%";}  */
 			.meter {width: 100%;}
 		}
 		&.level95 {
-/*    &:after {content: "95%";}  */
+/*    &::after {content: "95%";}  */
 			.meter {width: 95%;}
 		}
 		&.level90 {
-/*    &:after {content: "90%";}  */
+/*    &::after {content: "90%";}  */
 			.meter {width: 90%;}
 		}
 		&.level85 {
-/*    &:after {content: "85%";}  */
+/*    &::after {content: "85%";}  */
 			.meter {width: 85%;}
 		}
 		&.level80 {
-/*    &:after {content: "80%";}  */
+/*    &::after {content: "80%";}  */
 			.meter {width: 80%;}
 		}
 		&.level75 {
-/*    &:after {content: "75%";}  */
+/*    &::after {content: "75%";}  */
 			.meter {width: 75%;}
 		}
 		&.level70 {
-/*    &:after {content: "70%";}  */
+/*    &::after {content: "70%";}  */
 			.meter {width: 70%;}
 		}
 		&.level65 {
-/*    &:after {content: "65%";}  */
+/*    &::after {content: "65%";}  */
 			.meter {width: 65%;}
 		}
 		&.level60 {
-/*    &:after {content: "60%";}  */
+/*    &::after {content: "60%";}  */
 			.meter {width: 60%;}
 		}
 		&.level55 {
-/*    &:after {content: "55%";}  */
+/*    &::after {content: "55%";}  */
 			.meter {width: 55%;}
 		}
 		&.level50 {
-/*    &:after {content: "50%";}  */
+/*    &::after {content: "50%";}  */
 			.meter {width: 50%;}
 		}
 		&.level45 {
-/*    &:after {content: "45%";}  */
+/*    &::after {content: "45%";}  */
 			.meter {width: 45%;}
 		}
 		&.level40 {
-/*    &:after {content: "40%";}  */
+/*    &::after {content: "40%";}  */
 			.meter {width: 40%;}
 		}
 		&.level35 {
-/*    &:after {content: "35%";}  */
+/*    &::after {content: "35%";}  */
 			.meter {width: 35%;}
 		}
 		&.level30 {
-/*    &:after {content: "30%";}  */
+/*    &::after {content: "30%";}  */
 			.meter {width: 30%;}
 		}
 		&.level25 {
-/*    &:after {content: "25%";}  */
+/*    &::after {content: "25%";}  */
 			.meter {width: 25%;}
 		}
 		&.level20 {
-/*    &:after {content: "20%";}  */
+/*    &::after {content: "20%";}  */
 			.meter {width: 20%;}
 		}
 		&.level15 {
-/*    &:after {content: "15%";}  */
+/*    &::after {content: "15%";}  */
 			.meter {width: 15%;}
 		}
 		&.level10 {
-/*    &:after {content: "10%";}  */
+/*    &::after {content: "10%";}  */
 			.meter {width: 10%;}
 		}
 		&.level5 {
-/*    &:after {content: "5%";}  */
+/*    &::after {content: "5%";}  */
 			.meter {width: 5%;}
 		}
 		&.level0 {
-/*    &:after {content: "0%";}  */
+/*    &::after {content: "0%";}  */
 			.meter {width: 0%;}
 		}
 	}

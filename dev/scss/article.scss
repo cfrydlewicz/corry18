@@ -29,7 +29,7 @@
 		quotes: "\201C""\201D""\2018""\2019";
 		background-color: $c_grey80;
 		border-left: 8px solid $c_grey60;
-		&:before {
+		&::before {
 			float: left;
 			color: $c_grey60;
 			content: open-quote;
@@ -38,7 +38,7 @@
 			margin-top: .4em;
 			vertical-align: top;
 		}
-		&:after {
+		&::after {
 			content: close-quote;
 			@extend .u_visually-hidden;
 		}
